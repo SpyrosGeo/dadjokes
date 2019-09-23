@@ -50,7 +50,8 @@ letter-spacing: 0.6rem;
     background: white;
     align-self: center;
     width:70%;
-    overflow:scroll;
+    overflow:auto;
+    /* overflow: hidden; */
     box-shadow: 0 19px 39px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.1);
 }

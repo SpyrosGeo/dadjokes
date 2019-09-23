@@ -14,33 +14,46 @@ class JokeList extends Component {
     constructor(props){
         super(props);
         this.state={
-            jokes: []
-            
+            jokes: JSON.parse(window.localStorage.getItem("jokes") ||"[]")
         }
+        this.handleClick = this.handleClick.bind(this);
     }
-    async componentDidMount(){
+        componentDidMount(){
+        if(this.state.jokes.length===0) this.getJokes()
+
+        }
+    
         
-        let jokes =[];
-        while(jokes.length < this.props.numJokesToGet){
-    let res = await Axios.get('https://icanhazdadjoke.com/',{
-        headers:{
-            Accept:'application/json'
-        }
-    });
-        jokes.push({ id:uuid(),joke:res.data.joke,votes:0 });
-        }
-        this.setState({
-            jokes:jokes
-        })
-    }
+    async getJokes(){
+            let jokes = [];
+            while (jokes.length < this.props.numJokesToGet) {
+                let res = await Axios.get('https://icanhazdadjoke.com/', {
+                    headers: {Accept: 'application/json'}
+                });
+                jokes.push({ id: uuid(), joke: res.data.joke, votes: 0 });
+            }
+            this.setState(st =>({
+                jokes: [...st.jokes,...jokes]
+            }),
+                () => window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes)))
+            //update localstorage
+            
+        
+    }    
+
     handleVote(id,delta){
         this.setState(st =>({
             jokes: st.jokes.map(j =>
                 j.id === id ? {...j,votes:j.votes+delta} :j
                 )
-        }));
+        }),
+        ()=> window.localStorage.setItem("jokes",JSON.stringify(this.state.jokes)));
     }
 
+    handleClick(){
+        this.getJokes();
+
+    }
         render(){
             return (
 
@@ -48,9 +61,9 @@ class JokeList extends Component {
                     <div className="JokeList-sidebar" >
                         <h1 className="JokeList-title"><span> Sad</span> Jokes</h1>
                         <img 
-                        src="https://assets.dryicons.com/uploads/icon/svg/11391/1e47ef43-2c1f-4e54-bb55-5619ec342d3d.svg" 
+                            src="https://assets.dryicons.com/uploads/icon/svg/11331/d6a32f4a-de7b-4c4d-a745-dc583f4db9de.svg" 
                         alt="icon"></img>
-                        <button className='JokeList-getmore'>New Jokes</button>
+                        <button className='JokeList-getmore'onClick={this.handleClick}>New Jokes</button>
                     </div>
                     
                     <div className="JokeList-jokes">
