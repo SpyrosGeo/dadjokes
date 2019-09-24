@@ -72,7 +72,7 @@ letter-spacing: 0.6rem;
     border-radius:1.8rem;
     padding:1rem 2rem;
     background: transparent;
-    color:white;
+    color:#D3CCE3;
     font-weight:700;
     outline:none;
     cursor: pointer;
@@ -85,4 +85,35 @@ letter-spacing: 0.6rem;
 
     transform: translateY(-2px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25)
+}
+.JokeList-sidebar img:hover{
+    animation-name:shake;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay:0s;
+}
+
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }

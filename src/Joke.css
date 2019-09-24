@@ -6,7 +6,7 @@
     font-weight: 400;
     padding: 1rem;
     color:white;
-    background-color: #8E0E00;
+    background-color: rgba(133, 56, 51, 0.822);
     /* fallback for old browsers */
     background-color: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);
     /* Chrome 10-25, Safari 5.1-6 */
@@ -44,7 +44,11 @@
     font-size: 1.5em;
     margin: 10px;
     cursor: pointer;
-    color:grey;
+    color:white;
+    transition: all 0.3s;
+    border-radius: 100%;
+    box-shadow: 0 19px 39px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.1);
 }
 .Joke-smiley {
     font-size:  3rem;
@@ -52,4 +56,84 @@
     border-radius: 50%;
     box-shadow: 0 19px 39px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.1);
+}
+.fa-arrow-circle-up:hover{ 
+    animation-name:move-up;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    color:rgb(22, 185, 22);
+    background: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25)
+}
+.fa-arrow-circle-down:hover{ 
+    animation-name:move-down;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    color:rgb(228, 30, 30);
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25)
+}
+
+
+
+.Joke-smiley:hover
+{
+animation-name: spin;
+animation-duration: 0.5s;
+animation-timing-function: ease-in-out;
+animation-delay:0;
+
+}
+
+
+
+@keyframes move-up {
+
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes move-down {
+
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        transform: translateY(3px);
+    }
+}
+
+
+
+
+
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg)
+    }
+    30%{
+        transform: rotate(20deg)
+    }
+    60%{
+        transform: rotate(0deg)
+    }
+    80%{
+        transform: rotate(10deg)
+    }
+    100%{
+        transform: rotate(0deg)
+    }
 }

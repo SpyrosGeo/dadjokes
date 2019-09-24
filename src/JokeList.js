@@ -96,7 +96,7 @@ class JokeList extends Component {
                     <div className="JokeList-sidebar" >
                         <h1 className="JokeList-title"><span> Sad</span> Jokes</h1>
                         <img 
-                            src="https://assets.dryicons.com/uploads/icon/svg/11331/d6a32f4a-de7b-4c4d-a745-dc583f4db9de.svg" 
+                            src="https://image.flaticon.com/icons/svg/1430/1430489.svg" 
                         alt="icon"></img>
                         <button className='JokeList-getmore'onClick={this.handleClick}>New Jokes</button>
                     </div>
