@@ -65,3 +65,24 @@ letter-spacing: 0.6rem;
     text-align: center;
     letter-spacing: 3rem;
 }
+.JokeList-getmore {
+    margin:2rem;
+    font-size: 1.5rem;
+    width:50%;
+    border-radius:1.8rem;
+    padding:1rem 2rem;
+    background: transparent;
+    color:white;
+    font-weight:700;
+    outline:none;
+    cursor: pointer;
+    transition: 0.8 cubic-bezier(0.2,1,0.2, 1);
+
+      box-shadow: 0 19px 39px rgba(0, 0, 0, 0.3),
+      0 15px 12px rgba(0, 0, 0, 0.1);
+}
+.JokeList-getmore:hover {
+
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25)
+}

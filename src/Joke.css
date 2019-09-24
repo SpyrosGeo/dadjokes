@@ -5,6 +5,14 @@
     justify-content: center;
     font-weight: 400;
     padding: 1rem;
+    color:white;
+    background-color: #8E0E00;
+    /* fallback for old browsers */
+    background-color: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-color: linear-gradient(to right, #feb47b, #ff7e5f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .Joke-buttons{
