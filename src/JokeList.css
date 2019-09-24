@@ -58,4 +58,10 @@ letter-spacing: 0.6rem;
 .JokeList-spinner{
     color:white;
     text-align: center;
+    /* letter-spacing: 1rem; */
+}
+.JokeList-spinner h1{
+    color:white;
+    text-align: center;
+    letter-spacing: 3rem;
 }
